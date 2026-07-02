@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, String>> handleBusinessException(BusinessException ex) {
         String message = ex.hasCustomMessage() ? ex.getMessage() : AppConstants.errorMessage(ex.getErrorCode());
         log.error("Business exception: {} - {}", ex.getErrorCode().getCode(), message, ex);
-        HttpStatus status = HttpStatus.BAD_REQUEST;
+        HttpStatus status = ex.getErrorCode() == ErrorCode.AUTH_UNAUTHORIZED ? HttpStatus.UNAUTHORIZED : HttpStatus.BAD_REQUEST;
         return ResponseEntity.status(status).body(Map.of("code", ex.getErrorCode().getCode(), "message", message));
     }
 

@@ -5,6 +5,8 @@ import lombok.Getter;
 @Getter
 public enum ErrorCode {
 
+    AUTH_UNAUTHORIZED(63, "AUTH_UNAUTHORIZED"),
+
     INTERNAL_ERROR(999, "INTERNAL_ERROR");
 
     private final int id;
