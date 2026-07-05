@@ -97,7 +97,7 @@ public class OtpServiceImpl implements OtpService {
             throw new BusinessException(ErrorCode.OTP_INVALID);
         }
 
-        if (!otp.equals(record.otpHash())) {
+        if (!hashOtp(record.salt(), otp).equals(record.otpHash())) {
             handleFailedAttempt(record);
         }
 
@@ -127,14 +127,15 @@ public class OtpServiceImpl implements OtpService {
     }
 
     private UUID saveOtp(Long customerId, String initiatorId, OtpPurpose purpose, String otp) {
+        String salt = generateSalt();
         UUID requestId = UUID.randomUUID();
         RedisOtpEntry entry = RedisOtpEntry.pending(
                 requestId,
                 initiatorId,
                 customerId,
                 purpose,
-                otp,
-                ""
+                hashOtp(salt, otp),
+                salt
         );
         otpStore.save(entry);
         log.info("OTP generated customerId={} purpose={} requestId={} otp={}", customerId, purpose, requestId, otp);
