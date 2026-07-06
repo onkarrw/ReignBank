@@ -12,6 +12,9 @@ public interface AppConstants {
     String OTP_LOCKED = "OTP verification locked after too many failed attempts";
     String OTP_INVALID_WITH_ATTEMPTS = "Invalid OTP. %s attempt(s) remaining.";
     String AUTH_UNAUTHORIZED = "Unauthorized";
+    String AUTH_JWT_INVALID_SIGNATURE = "Invalid JWT signature";
+    String AUTH_JWT_EXPIRED = "JWT has expired";
+    String AUTH_JWT_MISSING_CLAIMS = "JWT missing required claims";
     String INTERNAL_ERROR = "Unexpected internal error";
 
     static String errorMessage(ErrorCode code) {
