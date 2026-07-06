@@ -36,7 +36,7 @@ public class JwtTokenService {
         JWTClaimsSet claims = new JWTClaimsSet.Builder()
                 .subject(username)
                 .claim("role", role)
-                .expirationTime(Date.from(Instant.now().plusSeconds(expirySeconds * 60))) // config looked like minutes?
+                .expirationTime(Date.from(Instant.now().plusSeconds(expirySeconds)))
                 .build();
         SignedJWT signedJwt = new SignedJWT(new JWSHeader(JWSAlgorithm.HS256), claims);
         try {
