@@ -13,6 +13,7 @@ public interface AppConstants {
     String CUSTOMER_NOT_FOUND = "Customer not found";
     String CUSTOMER_INACTIVE = "Customer account is inactive";
     String ONBOARDING_NOT_FOUND = "Onboarding record not found";
+    String ONBOARDING_INVALID_STATE = "Invalid onboarding state for this action";
     String OTP_NOT_FOUND = "OTP request not found";
     String OTP_REQUEST_MISMATCH = "OTP request ID does not match";
     String OTP_INVALID = "Invalid OTP";
@@ -39,6 +40,7 @@ public interface AppConstants {
             case CUSTOMER_ONBOARDING_EMAIL_REQUIRED -> CUSTOMER_ONBOARDING_EMAIL_REQUIRED;
             case CUSTOMER_NOT_FOUND -> CUSTOMER_NOT_FOUND;
             case ONBOARDING_NOT_FOUND -> ONBOARDING_NOT_FOUND;
+            case ONBOARDING_INVALID_STATE -> ONBOARDING_INVALID_STATE;
             case CUSTOMER_INACTIVE -> CUSTOMER_INACTIVE;
             case OTP_NOT_FOUND -> OTP_NOT_FOUND;
             case OTP_REQUEST_MISMATCH -> OTP_REQUEST_MISMATCH;
