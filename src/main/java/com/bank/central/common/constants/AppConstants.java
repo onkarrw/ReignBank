@@ -9,7 +9,11 @@ public interface AppConstants {
     String STAFF = "STAFF";
     String CUSTOMER = "CUSTOMER";
 
+    String CUSTOMER_ONBOARDING_FIRST_NAME_REQUIRED = "First name is required";
+    String CUSTOMER_ONBOARDING_LAST_NAME_REQUIRED = "Last name is required";
     String CUSTOMER_ONBOARDING_EMAIL_REQUIRED = "Email is required";
+    String CUSTOMER_ONBOARDING_INVALID_EMAIL = "Invalid email format";
+    String CUSTOMER_ONBOARDING_INVALID_PHONE = "Invalid phone number";
     String CUSTOMER_NOT_FOUND = "Customer not found";
     String CUSTOMER_INACTIVE = "Customer account is inactive";
     String ONBOARDING_NOT_FOUND = "Onboarding record not found";
@@ -37,7 +41,11 @@ public interface AppConstants {
 
     static String errorMessage(ErrorCode code) {
         return switch (code) {
+            case CUSTOMER_ONBOARDING_FIRST_NAME_REQUIRED -> CUSTOMER_ONBOARDING_FIRST_NAME_REQUIRED;
+            case CUSTOMER_ONBOARDING_LAST_NAME_REQUIRED -> CUSTOMER_ONBOARDING_LAST_NAME_REQUIRED;
             case CUSTOMER_ONBOARDING_EMAIL_REQUIRED -> CUSTOMER_ONBOARDING_EMAIL_REQUIRED;
+            case CUSTOMER_ONBOARDING_INVALID_EMAIL -> CUSTOMER_ONBOARDING_INVALID_EMAIL;
+            case CUSTOMER_ONBOARDING_INVALID_PHONE -> CUSTOMER_ONBOARDING_INVALID_PHONE;
             case CUSTOMER_NOT_FOUND -> CUSTOMER_NOT_FOUND;
             case ONBOARDING_NOT_FOUND -> ONBOARDING_NOT_FOUND;
             case ONBOARDING_INVALID_STATE -> ONBOARDING_INVALID_STATE;
