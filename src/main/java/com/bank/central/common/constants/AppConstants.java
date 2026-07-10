@@ -5,9 +5,13 @@ import com.bank.central.common.exception.ErrorCode;
 public interface AppConstants {
 
     String PENDING = "PENDING";
+    String APPROVED = "APPROVED";
+    String DENIED = "DENIED";
     String ACTIVE = "ACTIVE";
     String SUCCESS = "SUCCESS";
     String OTP_SENT = "OTP_SENT";
+    String PENDING_APPROVAL = "PENDING_APPROVAL";
+    String NO_ACCOUNT = "NO_ACCOUNT";
     String ACCOUNT_CREATION_PENDING = "ACCOUNT_CREATION_PENDING";
     String STAFF = "STAFF";
     String CUSTOMER = "CUSTOMER";
@@ -28,6 +32,13 @@ public interface AppConstants {
     String OTP_INVALID = "Invalid OTP";
     String OTP_LOCKED = "OTP verification locked after too many failed attempts";
     String OTP_INVALID_WITH_ATTEMPTS = "Invalid OTP. %s attempt(s) remaining.";
+    String ACCOUNT_NOT_FOUND = "Account not found";
+    String ACCOUNT_INACTIVE = "Account is inactive";
+    String ACCOUNT_ALREADY_EXISTS_CUSTOMER = "Account already exists for customer";
+    String INSUFFICIENT_FUNDS = "Insufficient balance";
+    String INSUFFICIENT_FUNDS_NEGATIVE_DEPOSIT = "Initial deposit cannot be negative";
+    String CASH_REQUEST_NOT_FOUND = "Cash request not found";
+    String CASH_REQUEST_NOT_PENDING = "Cash request is not pending";
     String AUTH_INVALID_CREDENTIALS = "Invalid credentials";
     String AUTH_PASSWORD_ALREADY_SET = "Password already set";
     String AUTH_PASSWORD_NOT_ALLOWED = "Password setup not allowed at current onboarding stage";
@@ -49,6 +60,17 @@ public interface AppConstants {
     String RESPONSE_ONBOARDING_EMAIL_VERIFIED = "Email verified successfully. You can proceed with onboarding.";
     String RESPONSE_ONBOARDING_KYC_OTP_SENT = "Mobile KYC OTP sent.";
     String RESPONSE_ONBOARDING_KYC_VERIFIED = "Mobile KYC verified successfully.";
+    String RESPONSE_ACCOUNT_SUMMARY_ACTIVE = "Account is active.";
+    String RESPONSE_ACCOUNT_SUMMARY_PENDING = "Cash deposit request is pending employee approval.";
+    String RESPONSE_ACCOUNT_SUMMARY_NONE = "No account found. Complete account opening to continue.";
+    String RESPONSE_ACCOUNT_ALREADY_EXISTS = "Account already exists.";
+    String RESPONSE_ACCOUNT_PENDING_ALREADY = "Cash request already pending employee approval.";
+    String RESPONSE_ACCOUNT_PENDING_SENT = "Cash deposit request sent for employee approval.";
+    String RESPONSE_ACCOUNT_CREATED = "Account created successfully.";
+    String RESPONSE_ACCOUNT_OTP_SENT = "Account creation OTP sent to email.";
+    String RESPONSE_ACCOUNT_OTP_VERIFIED = "Account creation OTP verified.";
+    String RESPONSE_CASH_APPROVED = "Cash request approved and account created.";
+    String RESPONSE_CASH_DENIED = "Cash request denied.";
 
     static String errorMessage(ErrorCode code) {
         return switch (code) {
@@ -67,6 +89,9 @@ public interface AppConstants {
             case OTP_REQUEST_MISMATCH -> OTP_REQUEST_MISMATCH;
             case OTP_INVALID -> OTP_INVALID;
             case OTP_LOCKED -> OTP_LOCKED;
+            case ACCOUNT_NOT_FOUND -> ACCOUNT_NOT_FOUND;
+            case ACCOUNT_INACTIVE -> ACCOUNT_INACTIVE;
+            case INSUFFICIENT_FUNDS -> INSUFFICIENT_FUNDS;
             case AUTH_INVALID_CREDENTIALS -> AUTH_INVALID_CREDENTIALS;
             case AUTH_PASSWORD_ALREADY_SET -> AUTH_PASSWORD_ALREADY_SET;
             case AUTH_PASSWORD_NOT_ALLOWED -> AUTH_PASSWORD_NOT_ALLOWED;
