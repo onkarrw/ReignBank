@@ -4,6 +4,7 @@ import com.bank.central.common.exception.ErrorCode;
 
 public interface AppConstants {
 
+    String PENDING = "PENDING";
     String ACTIVE = "ACTIVE";
     String SUCCESS = "SUCCESS";
     String OTP_SENT = "OTP_SENT";
