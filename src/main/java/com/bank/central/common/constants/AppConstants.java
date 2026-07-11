@@ -34,9 +34,15 @@ public interface AppConstants {
     String OTP_INVALID_WITH_ATTEMPTS = "Invalid OTP. %s attempt(s) remaining.";
     String ACCOUNT_NOT_FOUND = "Account not found";
     String ACCOUNT_INACTIVE = "Account is inactive";
+    String ACCOUNT_NOT_FOUND_RECIPIENT = "Recipient account not found";
+    String ACCOUNT_INACTIVE_RECIPIENT = "Recipient account is inactive";
     String ACCOUNT_ALREADY_EXISTS_CUSTOMER = "Account already exists for customer";
     String INSUFFICIENT_FUNDS = "Insufficient balance";
     String INSUFFICIENT_FUNDS_NEGATIVE_DEPOSIT = "Initial deposit cannot be negative";
+    String INVALID_TRANSFER = "Invalid transfer request";
+    String INVALID_TRANSFER_AMOUNT = "Amount must be greater than zero";
+    String INVALID_TRANSFER_RECIPIENT_REQUIRED = "Recipient account number is required";
+    String INVALID_TRANSFER_SAME_ACCOUNT = "Cannot transfer to the same account";
     String CASH_REQUEST_NOT_FOUND = "Cash request not found";
     String CASH_REQUEST_NOT_PENDING = "Cash request is not pending";
     String AUTH_INVALID_CREDENTIALS = "Invalid credentials";
@@ -69,6 +75,9 @@ public interface AppConstants {
     String RESPONSE_ACCOUNT_CREATED = "Account created successfully.";
     String RESPONSE_ACCOUNT_OTP_SENT = "Account creation OTP sent to email.";
     String RESPONSE_ACCOUNT_OTP_VERIFIED = "Account creation OTP verified.";
+    String RESPONSE_TRANSFER_SUCCESS = "Transfer completed successfully.";
+    String RESPONSE_TRANSFER_OTP_SENT = "Transfer OTP sent to email.";
+    String RESPONSE_TRANSFER_OTP_VERIFIED = "Transfer OTP verified.";
     String RESPONSE_CASH_APPROVED = "Cash request approved and account created.";
     String RESPONSE_CASH_DENIED = "Cash request denied.";
 
@@ -92,6 +101,7 @@ public interface AppConstants {
             case ACCOUNT_NOT_FOUND -> ACCOUNT_NOT_FOUND;
             case ACCOUNT_INACTIVE -> ACCOUNT_INACTIVE;
             case INSUFFICIENT_FUNDS -> INSUFFICIENT_FUNDS;
+            case INVALID_TRANSFER -> INVALID_TRANSFER;
             case AUTH_INVALID_CREDENTIALS -> AUTH_INVALID_CREDENTIALS;
             case AUTH_PASSWORD_ALREADY_SET -> AUTH_PASSWORD_ALREADY_SET;
             case AUTH_PASSWORD_NOT_ALLOWED -> AUTH_PASSWORD_NOT_ALLOWED;
