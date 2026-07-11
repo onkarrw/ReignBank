@@ -39,6 +39,8 @@ public interface AppConstants {
     String ACCOUNT_ALREADY_EXISTS_CUSTOMER = "Account already exists for customer";
     String INSUFFICIENT_FUNDS = "Insufficient balance";
     String INSUFFICIENT_FUNDS_NEGATIVE_DEPOSIT = "Initial deposit cannot be negative";
+    String ACCOUNT_OTP_NOT_VERIFIED = "Account creation OTP is not verified";
+    String SEND_MONEY_OTP_NOT_VERIFIED = "Transfer OTP is not verified";
     String INVALID_TRANSFER = "Invalid transfer request";
     String INVALID_TRANSFER_AMOUNT = "Amount must be greater than zero";
     String INVALID_TRANSFER_RECIPIENT_REQUIRED = "Recipient account number is required";
@@ -101,7 +103,9 @@ public interface AppConstants {
             case ACCOUNT_NOT_FOUND -> ACCOUNT_NOT_FOUND;
             case ACCOUNT_INACTIVE -> ACCOUNT_INACTIVE;
             case INSUFFICIENT_FUNDS -> INSUFFICIENT_FUNDS;
+            case ACCOUNT_OTP_NOT_VERIFIED -> ACCOUNT_OTP_NOT_VERIFIED;
             case INVALID_TRANSFER -> INVALID_TRANSFER;
+            case SEND_MONEY_OTP_NOT_VERIFIED -> SEND_MONEY_OTP_NOT_VERIFIED;
             case AUTH_INVALID_CREDENTIALS -> AUTH_INVALID_CREDENTIALS;
             case AUTH_PASSWORD_ALREADY_SET -> AUTH_PASSWORD_ALREADY_SET;
             case AUTH_PASSWORD_NOT_ALLOWED -> AUTH_PASSWORD_NOT_ALLOWED;
