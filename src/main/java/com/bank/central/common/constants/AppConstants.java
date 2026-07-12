@@ -82,6 +82,8 @@ public interface AppConstants {
     String RESPONSE_TRANSFER_OTP_VERIFIED = "Transfer OTP verified.";
     String RESPONSE_CASH_APPROVED = "Cash request approved and account created.";
     String RESPONSE_CASH_DENIED = "Cash request denied.";
+    String RESPONSE_ADMIN_CASH_ADDED = "Cash added successfully.";
+    String RESPONSE_ADMIN_CASH_REMOVED = "Cash removed successfully.";
 
     static String errorMessage(ErrorCode code) {
         return switch (code) {
