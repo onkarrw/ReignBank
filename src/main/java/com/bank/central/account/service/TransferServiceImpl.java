@@ -47,6 +47,7 @@ public class TransferServiceImpl implements TransferService {
     }
 
     @Override
+    @Transactional
     public SendMoneyResponse sendMoney(Long customerId, SendMoneyRequest request) {
         if (request.amount() == null || request.amount().compareTo(BigDecimal.ZERO) <= 0) {
             throw new BusinessException(ErrorCode.INVALID_TRANSFER, AppConstants.INVALID_TRANSFER_AMOUNT);
