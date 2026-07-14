@@ -3,23 +3,23 @@ import { createContext, useContext, useMemo, useState } from "react";
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-    const [authToken, setAuthToken] = useState(localStorage.getItem("authToken") || "");
-    const [username, setUsername] = useState(localStorage.getItem("username") || "");
-    const [role, setRole] = useState(localStorage.getItem("role") || "");
+    const [authToken, setAuthToken] = useState(sessionStorage.getItem("authToken") || "");
+    const [username, setUsername] = useState(sessionStorage.getItem("username") || "");
+    const [role, setRole] = useState(sessionStorage.getItem("role") || "");
 
     const login = (token, loginUsername, loginRole) => {
-        localStorage.setItem("authToken", token);
-        localStorage.setItem("username", loginUsername);
-        localStorage.setItem("role", loginRole);
+        sessionStorage.setItem("authToken", token);
+        sessionStorage.setItem("username", loginUsername);
+        sessionStorage.setItem("role", loginRole);
         setAuthToken(token);
         setUsername(loginUsername);
         setRole(loginRole);
     };
 
     const logout = () => {
-        localStorage.removeItem("authToken");
-        localStorage.removeItem("username");
-        localStorage.removeItem("role");
+        sessionStorage.removeItem("authToken");
+        sessionStorage.removeItem("username");
+        sessionStorage.removeItem("role");
         setAuthToken("");
         setUsername("");
         setRole("");
@@ -43,6 +43,8 @@ export function AuthProvider({ children }) {
 
 export function useAuth() {
     const ctx = useContext(AuthContext);
-    if (!ctx) throw new Error("useAuth must be used within AuthProvider");
+    if (!ctx) {
+        throw new Error("useAuth must be used within AuthProvider");
+    }
     return ctx;
 }
