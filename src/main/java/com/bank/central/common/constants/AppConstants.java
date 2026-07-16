@@ -56,7 +56,6 @@ public interface AppConstants {
 
     String CASH_REQUEST_NOT_FOUND = "Cash request not found";
     String CASH_REQUEST_NOT_PENDING = "Cash request is not pending";
-
     String AUTH_INVALID_CREDENTIALS = "Invalid credentials";
     String AUTH_PASSWORD_ALREADY_SET = "Password already set";
     String AUTH_PASSWORD_NOT_ALLOWED = "Password setup not allowed at current onboarding stage";
@@ -106,6 +105,7 @@ public interface AppConstants {
             case CUSTOMER_ONBOARDING_EMAIL_EXISTS -> CUSTOMER_ONBOARDING_EMAIL_EXISTS;
             case CUSTOMER_ONBOARDING_PHONE_LIMIT_REACHED -> CUSTOMER_ONBOARDING_PHONE_LIMIT_REACHED;
             case CUSTOMER_NOT_FOUND -> CUSTOMER_NOT_FOUND;
+
             case CUSTOMER_INACTIVE -> CUSTOMER_INACTIVE;
             case ONBOARDING_NOT_FOUND -> ONBOARDING_NOT_FOUND;
             case ONBOARDING_INVALID_STATE -> ONBOARDING_INVALID_STATE;
