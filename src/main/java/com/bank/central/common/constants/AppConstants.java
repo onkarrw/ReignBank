@@ -23,20 +23,28 @@ public interface AppConstants {
     String CUSTOMER_ONBOARDING_INVALID_PHONE = "Invalid phone number";
     String CUSTOMER_ONBOARDING_EMAIL_EXISTS = "Email already registered";
     String CUSTOMER_ONBOARDING_PHONE_LIMIT_REACHED = "Maximum registrations reached for this phone";
+
     String CUSTOMER_NOT_FOUND = "Customer not found";
     String CUSTOMER_INACTIVE = "Customer account is inactive";
     String ONBOARDING_NOT_FOUND = "Onboarding record not found";
     String ONBOARDING_INVALID_STATE = "Invalid onboarding state for this action";
+
     String OTP_NOT_FOUND = "OTP request not found";
     String OTP_REQUEST_MISMATCH = "OTP request ID does not match";
     String OTP_INVALID = "Invalid OTP";
+    String OTP_EXPIRED = "OTP has expired";
     String OTP_LOCKED = "OTP verification locked after too many failed attempts";
     String OTP_INVALID_WITH_ATTEMPTS = "Invalid OTP. %s attempt(s) remaining.";
+
     String ACCOUNT_NOT_FOUND = "Account not found";
     String ACCOUNT_INACTIVE = "Account is inactive";
     String ACCOUNT_NOT_FOUND_RECIPIENT = "Recipient account not found";
     String ACCOUNT_INACTIVE_RECIPIENT = "Recipient account is inactive";
     String ACCOUNT_ALREADY_EXISTS_CUSTOMER = "Account already exists for customer";
+
+    String KYC_INVALID = "KYC validation failed";
+    String KYC_PENDING = "KYC is still pending";
+
     String INSUFFICIENT_FUNDS = "Insufficient balance";
     String INSUFFICIENT_FUNDS_NEGATIVE_DEPOSIT = "Initial deposit cannot be negative";
     String ACCOUNT_OTP_NOT_VERIFIED = "Account creation OTP is not verified";
@@ -45,6 +53,7 @@ public interface AppConstants {
     String INVALID_TRANSFER_AMOUNT = "Amount must be greater than zero";
     String INVALID_TRANSFER_RECIPIENT_REQUIRED = "Recipient account number is required";
     String INVALID_TRANSFER_SAME_ACCOUNT = "Cannot transfer to the same account";
+
     String CASH_REQUEST_NOT_FOUND = "Cash request not found";
     String CASH_REQUEST_NOT_PENDING = "Cash request is not pending";
     String AUTH_INVALID_CREDENTIALS = "Invalid credentials";
@@ -57,6 +66,7 @@ public interface AppConstants {
     String AUTH_JWT_INVALID_SIGNATURE = "Invalid JWT signature";
     String AUTH_JWT_EXPIRED = "JWT has expired";
     String AUTH_JWT_MISSING_CLAIMS = "JWT missing required claims";
+
     String INTERNAL_ERROR = "Unexpected internal error";
 
     String RESPONSE_AUTH_PASSWORD_SET = "Password set successfully. Please login.";
@@ -95,19 +105,23 @@ public interface AppConstants {
             case CUSTOMER_ONBOARDING_EMAIL_EXISTS -> CUSTOMER_ONBOARDING_EMAIL_EXISTS;
             case CUSTOMER_ONBOARDING_PHONE_LIMIT_REACHED -> CUSTOMER_ONBOARDING_PHONE_LIMIT_REACHED;
             case CUSTOMER_NOT_FOUND -> CUSTOMER_NOT_FOUND;
+
+            case CUSTOMER_INACTIVE -> CUSTOMER_INACTIVE;
             case ONBOARDING_NOT_FOUND -> ONBOARDING_NOT_FOUND;
             case ONBOARDING_INVALID_STATE -> ONBOARDING_INVALID_STATE;
-            case CUSTOMER_INACTIVE -> CUSTOMER_INACTIVE;
             case OTP_NOT_FOUND -> OTP_NOT_FOUND;
             case OTP_REQUEST_MISMATCH -> OTP_REQUEST_MISMATCH;
             case OTP_INVALID -> OTP_INVALID;
+            case OTP_EXPIRED -> OTP_EXPIRED;
             case OTP_LOCKED -> OTP_LOCKED;
             case ACCOUNT_NOT_FOUND -> ACCOUNT_NOT_FOUND;
             case ACCOUNT_INACTIVE -> ACCOUNT_INACTIVE;
+            case KYC_INVALID -> KYC_INVALID;
+            case KYC_PENDING -> KYC_PENDING;
             case INSUFFICIENT_FUNDS -> INSUFFICIENT_FUNDS;
             case ACCOUNT_OTP_NOT_VERIFIED -> ACCOUNT_OTP_NOT_VERIFIED;
-            case INVALID_TRANSFER -> INVALID_TRANSFER;
             case SEND_MONEY_OTP_NOT_VERIFIED -> SEND_MONEY_OTP_NOT_VERIFIED;
+            case INVALID_TRANSFER -> INVALID_TRANSFER;
             case AUTH_INVALID_CREDENTIALS -> AUTH_INVALID_CREDENTIALS;
             case AUTH_PASSWORD_ALREADY_SET -> AUTH_PASSWORD_ALREADY_SET;
             case AUTH_PASSWORD_NOT_ALLOWED -> AUTH_PASSWORD_NOT_ALLOWED;
