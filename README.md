@@ -1,6 +1,6 @@
-# springAdoption — project rules
+## Let's check SpringBoot-4 features
 
-Rules for backend (`springAdoption`), database (`pg_queries.sql`), and frontend (`frontend/bank_fe`).
+Rules: database (`pg_queries.sql`), and frontend (`frontend/bank_fe`).
 
 ## Database (`pg_queries.sql`)
 
